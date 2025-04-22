@@ -307,7 +307,6 @@ sequenceDiagram
     alt Time for network maintenance
         Loop->>NM: reloadNodeJoinQueue()
         Loop->>NM: sendNodeJoinRequests()
-
     end
 ```
 
