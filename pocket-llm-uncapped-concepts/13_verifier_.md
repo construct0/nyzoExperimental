@@ -285,21 +285,25 @@ sequenceDiagram
     participant Msg as Message Sending
 
     Loop->>BM: Get frozenEdge
+
     alt Time to Create Block
         Loop->>TxPool: Get Transactions
         Loop->>BalMgr: Check Transactions
         Loop->>Loop: Create Block object
         Loop->>UBM: registerBlock(local block)
-        Loop->>Msg: broadcast(NewBlock Message)
+        Loop->>Msg: broadcast "NewBlock" Message
     end
+
     Loop->>UBM: updateVote()
     Loop->>UBM: attemptToFreezeBlock()
     UBM->>BVM: leadingHashForHeight()
+
     alt Consensus Reached
         UBM->>BM: freezeBlock(winning block)
         Loop->>UBM: performMaintenance()
         Loop->>BVM: removeOldVotes()
     end
+
     alt Time for Network Maintenance
         Loop->>NM: reloadNodeJoinQueue()
         Loop->>NM: sendNodeJoinRequests()
