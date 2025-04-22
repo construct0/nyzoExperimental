@@ -33,27 +33,27 @@ Just like a page in our ledger book analogy, a Nyzo `Block` contains specific pi
 
 ```mermaid
 graph TD
-    subgraph BlockN [Page N]
+    subgraph BlockN ["Page N"]
         direction LR
-        HeightN[Height: N]
-        PrevHashN[Prev Hash: fingerprint(Block N-1)]
-        TimestampN[Timestamp]
-        VerifierN[Verifier Signature]
-        BalanceHashN[Balance List Hash]
-        TxListN[Transactions List: Tx1, Tx2, ...]
+        HeightN("Height: N")
+        PrevHashN("Prev Hash: fingerprint(Block N-1)")
+        TimestampN("Timestamp")
+        VerifierN("Verifier Signature")
+        BalanceHashN("Balance List Hash")
+        TxListN("Transactions List: Tx1, Tx2, ...")
     end
 
-    subgraph BlockN1 [Page N-1]
+    subgraph BlockN1 ["Page N-1"]
         direction LR
-        HeightN1[Height: N-1]
-        PrevHashN1[Prev Hash: fingerprint(Block N-2)]
-        TimestampN1[Timestamp]
-        VerifierN1[Verifier Signature]
-        BalanceHashN1[Balance List Hash]
-        TxListN1[Transactions List: ...]
+        HeightN1("Height: N-1")
+        PrevHashN1("Prev Hash: fingerprint(Block N-2)")
+        TimestampN1("Timestamp")
+        VerifierN1("Verifier Signature")
+        BalanceHashN1("Balance List Hash")
+        TxListN1("Transactions List: ...")
     end
 
-    BlockN -- PrevHashN points to --> BlockN1
+    BlockN -->|PrevHashN points to| BlockN1
 ```
 
 ## How Blocks are Created (Simplified)
