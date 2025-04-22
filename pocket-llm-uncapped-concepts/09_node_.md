@@ -28,14 +28,14 @@ Just like a contact card, a `Node` object holds specific pieces of information a
 
 ```mermaid
 graph TD
-    subgraph Node Object (Contact Card)
+    subgraph NodeObject ["Contact Card"]
         direction LR
-        ID[Identifier: Public Key]
-        IP[IP Address: e.g., 1.2.3.4]
-        PortTCP[TCP Port: e.g., 9444]
-        PortUDP[UDP Port: e.g., 9446]
-        QueueTS[Queue Timestamp: Time]
-        Status[Status Info:<br>- Inactive Timestamp<br>- Comm Failure Count]
+        ID("Identifier: Public Key")
+        IP("IP Address: e.g., 1.2.3.4")
+        PortTCP("TCP Port: e.g., 9444")
+        PortUDP("UDP Port: e.g., 9446")
+        QueueTS("Queue Timestamp: Time")
+        Status("Status Info: Inactive Timestamp, Comm Failure Count")
     end
 ```
 
