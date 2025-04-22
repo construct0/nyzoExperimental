@@ -16,10 +16,10 @@ Think of the sequence of blocks in the blockchain. Each block is signed by a [Ve
 graph TD
     subgraph BlockchainHistory ["Recent Blocks"]
         B_N("Block N\nVerifier: V_A") --> B_N_1("Block N-1\nVerifier: V_E")
-        B_N_1 --> B_N_2("Block N-2\nVerifier: V_D")
-        B_N_2 --> B_N_3("Block N-3\nVerifier: V_C")
-        B_N_3 --> B_N_4("Block N-4\nVerifier: V_B")
-        B_N_4 --> B_N_5("Block N-5\nVerifier: V_A")
+        B_N_1 --> B_N_2("Block N-2, Verifier: V_D")
+        B_N_2 --> B_N_3("Block N-3, Verifier: V_C")
+        B_N_3 --> B_N_4("Block N-4, Verifier: V_B")
+        B_N_4 --> B_N_5("Block N-5, Verifier: V_A")
         B_N_5 --> B_N_6("...")
     end
 
