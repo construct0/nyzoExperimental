@@ -292,6 +292,7 @@ sequenceDiagram
         Loop->>Loop: Create block object
         Loop->>UBM: registerBlock(local block)
         Loop->>Msg: Broadcast "NewBlock" message
+
     end
 
     Loop->>UBM: updateVote()
@@ -302,11 +303,13 @@ sequenceDiagram
         UBM->>BM: freezeBlock(winning block)
         Loop->>UBM: performMaintenance()
         Loop->>BVM: removeOldVotes()
+
     end
 
     alt Time for network maintenance
         Loop->>NM: reloadNodeJoinQueue()
         Loop->>NM: sendNodeJoinRequests()
+
     end
 ```
 
