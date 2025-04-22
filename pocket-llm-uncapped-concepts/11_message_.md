@@ -28,19 +28,19 @@ Every `Message` follows a standard structure:
 
 ```mermaid
 graph TD
-    subgraph Message Structure
+    subgraph MessageStructure ["Message Structure"]
         direction LR
-        Type[Type: MessageType (e.g., BlockVote19)]
-        Timestamp[Timestamp: Creation Time]
-        SenderID[Sender ID: Public Key]
-        Content[Content: MessageObject (e.g., BlockVote object)]
-        Signature[Sender Signature: Cryptographic Proof]
+        Type("Type: MessageType (e.g., BlockVote19)")
+        Timestamp("Timestamp: Creation Time")
+        SenderID("Sender ID: Public Key")
+        Content("Content: MessageObject (e.g., BlockVote object)")
+        Signature("Sender Signature: Cryptographic Proof")
     end
 
-    Timestamp -- Signed --> Signature
-    Type -- Signed --> Signature
-    Content -- Signed --> Signature
-    SenderID -- Signed --> Signature
+    Timestamp -->|Signed| Signature
+    Type -->|Signed| Signature
+    Content -->|Signed| Signature
+    SenderID -->|Signed| Signature
 ```
 
 *(Note: The signature signs all the other parts, ensuring authenticity and integrity.)*
