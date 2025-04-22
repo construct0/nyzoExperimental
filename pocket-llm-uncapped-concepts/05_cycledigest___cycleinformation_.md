@@ -14,23 +14,23 @@ Think of the sequence of blocks in the blockchain. Each block is signed by a [Ve
 
 ```mermaid
 graph TD
-    subgraph Blockchain History (Recent Blocks)
-        B_N(Block N<br>Verifier: V_A) --> B_N_1(Block N-1<br>Verifier: V_E)
-        B_N_1 --> B_N_2(Block N-2<br>Verifier: V_D)
-        B_N_2 --> B_N_3(Block N-3<br>Verifier: V_C)
-        B_N_3 --> B_N_4(Block N-4<br>Verifier: V_B)
-        B_N_4 --> B_N_5(Block N-5<br>Verifier: V_A)
-        B_N_5 --> B_N_6(...)
+    subgraph BlockchainHistory ["Recent Blocks"]
+        B_N("Block N\nVerifier: V_A") --> B_N_1("Block N-1\nVerifier: V_E")
+        B_N_1 --> B_N_2("Block N-2\nVerifier: V_D")
+        B_N_2 --> B_N_3("Block N-3\nVerifier: V_C")
+        B_N_3 --> B_N_4("Block N-4\nVerifier: V_B")
+        B_N_4 --> B_N_5("Block N-5\nVerifier: V_A")
+        B_N_5 --> B_N_6("...")
     end
 
-    subgraph Cycle for Block N
+    subgraph CycleBlockN ["Cycle for Block N"]
         direction LR
         V_A --> V_E --> V_D --> V_C --> V_B
     end
 
-    Note --> B_N: Current Block
-    Note2 --> B_N_5: First repeat of V_A
-    Note3 --> Cycle: Verifiers between N and N-5 (exclusive of N-5's V_A)
+    Note("Current Block") --> B_N
+    Note2("First repeat of V_A") --> B_N_5
+    Note3("Verifiers between N and N-5 (exclusive of N-5's V_A)") --> CycleBlockN
 ```
 
 In this example, the cycle for Block N consists of Verifiers A, E, D, C, and B. The **cycle length** is 5.
