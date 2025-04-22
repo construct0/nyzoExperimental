@@ -42,15 +42,15 @@ A `BalanceList` object contains several key pieces of information that define th
 
 ```mermaid
 graph TD
-    subgraph BalanceList for Block N
+    subgraph BalanceList ["BalanceList for Block N"]
         direction LR
-        HeightN[Height: N]
-        Version[Version: X]
-        Rollover[Rollover Fees: Z μN]
-        PrevV[Prev Verifiers: [V_N-1, V_N-2, ...]]
-        Unlock[Unlock Info: Threshold, Sum]
-        CycleTx[Cycle Tx Info: Pending, Approved]
-        ItemList[Items (Sorted List):<br>- Account A: Balance, Fee Counter<br>- Account B: Balance, Fee Counter<br>- ...]
+        HeightN("Height: N")
+        Version("Version: X")
+        Rollover("Rollover Fees: Z μN")
+        PrevV("Prev Verifiers: [V_N-1, V_N-2, ...]")
+        Unlock("Unlock Info: Threshold, Sum")
+        CycleTx("Cycle Tx Info: Pending, Approved")
+        ItemList("Items (Sorted List): Account A: Balance, Fee Counter; Account B: Balance, Fee Counter; ...")
     end
 ```
 
