@@ -28,16 +28,16 @@ Just like a check you might write, a Nyzo `Transaction` needs specific details t
 
 ```mermaid
 graph TD
-    subgraph Transaction (Alice sends 10 Nyzo to Bob)
+    subgraph Transaction ["Alice sends 10 Nyzo to Bob"]
         direction LR
-        Type[Type: Standard]
-        Timestamp[Timestamp: e.g., Now]
-        Amount[Amount: 10 Nyzo]
-        Receiver[Receiver: Bob's Address]
-        Sender[Sender: Alice's Address]
-        PrevHash[Prev Block Hash Ref]
-        SenderData[Sender Data: (Optional) "For lunch"]
-        Signature[Signature: Alice's Digital Signature]
+        Type("Type: Standard")
+        Timestamp("Timestamp: e.g., Now")
+        Amount("Amount: 10 Nyzo")
+        Receiver("Receiver: Bob's Address")
+        Sender("Sender: Alice's Address")
+        PrevHash("Prev Block Hash Ref")
+        SenderData("Sender Data: (Optional) 'For lunch'")
+        Signature("Signature: Alice's Digital Signature")
     end
 ```
 
